@@ -1,0 +1,13 @@
+.tts-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 5px;
+    cursor: pointer;
+    width: 20px; /* Adjust width and height as needed */
+    height: 20px;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/ic_sound.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: red; */
+}

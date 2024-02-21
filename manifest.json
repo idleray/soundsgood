@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Sounds Good",
+    "version": "1.0",
+    "description": "Translate selected text to speech",
+    "permissions": ["activeTab", "scripting", "webRequest"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "matches": ["*://*/*"],
+        "js": ["js/content.js"],
+        "css": ["css/content.css"]
+    }]
+  }
