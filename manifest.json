@@ -3,13 +3,27 @@
     "name": "Sounds Good",
     "version": "1.0",
     "description": "Translate selected text to speech",
-    "permissions": ["activeTab", "scripting", "webRequest"],
+    "author": "idleray@gmail.com",
+    "permissions": ["activeTab", "scripting", "webRequest", "commands", "storage"],
     "action": {
+      "default_icon": "assets/ic_sound.png",
       "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
     },
     "content_scripts": [{
         "matches": ["*://*/*"],
         "js": ["js/content.js"],
         "css": ["css/content.css"]
-    }]
+    }],
+    "commands": {
+      "play_audio": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+P",
+          "mac": "Command+Shift+P"
+        },
+        "description": "Play Audio"
+      }
+    }
   }
