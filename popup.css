@@ -1,0 +1,31 @@
+.custom-component {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+  }
+
+  .custom-component .text {
+    color: black;
+  }
+
+  .custom-component .select {
+    border: 1px solid gray;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px;
+    margin-top: 8px;
+  }
+
+  .custom-component .select select {
+    border: none;
+    /* appearance: none; */
+    background-color: transparent;
+    padding: 0 4px;
+    flex: 1;
+  }
+
+  /* .custom-component .select::after {
+    content: '\25BC';
+    margin-left: 4px;
+  } */

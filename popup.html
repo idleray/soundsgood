@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Popup Page</title>
+  <meta charset="utf8">
+  
+  <title></title>
   <style>
     body {
       width: 300px;
       height: 200px;
-      font-family: Arial, sans-serif;
+      /* font-family: Arial, sans-serif; */
     }
 
     h1 {
@@ -18,11 +20,30 @@
       color: #888;
     }
   </style>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>Welcome to the Popup Page</h1>
-  <p>Click the button to open the configuration page</p>
-  <button id="configButton">Open Config Page</button>
+  <div class="custom-component">
+    <label class="text">First Line of Text</label>
+    <label class="select">
+      <select>
+        <!-- Add your select options here -->
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>region</label>
+    <select class="select">
+      <!-- Add your select options here -->
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </select>
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>

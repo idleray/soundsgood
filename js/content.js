@@ -3,44 +3,10 @@ let subscriptionKey = ""
 const region = 'eastus';
 const endpoint = `https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`;
 
-// document.addEventListener('selectionchange1', () => {
-//     console.log('Selection changed');
-//     const selection = document.getSelection();
-//     if (selection && !selection.isCollapsed) {
-//       const iconElement = document.createElement('div');
-//       iconElement.classList.add('tts-icon');
-
-//       const range = selection.getRangeAt(0);
-//       const selectedText = range.toString();
-//       if(selectedText) {
-//         console.log(range)
-//         const rect = range.getBoundingClientRect();
-//         // iconElement.style.right = `${containerRect.right + 5}px`; // Adjust offset
-//         iconElement.style.top = `${rect.top}px`;
-//         iconElement.style.left = `${rect.right}px`;
-//       }
-      
-      
-      
-//       /* Add click event listener for the icon */
-//       iconElement.addEventListener('click', () => {
-//         // Code to send selected text to server and handle speech playback
-//       });
-//       selection.anchorNode.parentElement.appendChild(iconElement);
-//       const ttsIcon = document.querySelector('.tts-icon');
-//       console.log(ttsIcon.style)
-//       const a = chrome.runtime.getURL('assets/babe.jpeg')
-//       const b = `url('${a}')`
-//       console.log(b)
-// ttsIcon.style.backgroundImage = b;
-//     } else {
-//       // Remove icons if no text is selected
-//       const existingIcons = document.querySelectorAll('.tts-icon');
-//       for (const icon of existingIcons) {
-//         icon.remove();
-//       }
-//     }
-// });
+document.addEventListener('selectionchange', () => {
+    console.log('Selection changed');
+    
+});
 
 // Add click event listener for all icon elements (outside of mouseup handler)
 // document.addEventListener('click', (event) => {
@@ -49,14 +15,20 @@ const endpoint = `https://${region}.tts.speech.microsoft.com/cognitiveservices/v
 //   if (target.classList.contains('tts-icon')) {
 //     console.log("tts-icon clicked")
 //     const selection = document.getSelection();
+//     console.log(selection)
 //     const text = selection.toString().trim();
-//     if (text) {
-//       sendTextToTTSAPI(text);
-//     }
+//     console.log(text)
+//     // if (text) {
+//     //   sendTextToTTSAPI(text);
+//     // }
 //   }
 // });
 
 init()
+
+const Md = function(a) {
+  return a.scrollingElement ? a.scrollingElement : !H && Pd(a) ? a.documentElement : a.body || a.documentElement
+}
 
 document.addEventListener('mouseup1', (event) => {
   console.log("mouseup");
@@ -72,7 +44,7 @@ document.addEventListener('mouseup1', (event) => {
         const rect = range.getBoundingClientRect();
         console.log(rect)
         // iconElement.style.right = `${containerRect.right + 5}px`; // Adjust offset
-        iconElement.style.top = `${rect.top}px`;
+        iconElement.style.top = `${rect.bottom + Md(document).scrollTop}px`;
         iconElement.style.left = `${rect.right}px`;
       }
       
@@ -80,24 +52,18 @@ document.addEventListener('mouseup1', (event) => {
       
       /* Add click event listener for the icon */
       iconElement.addEventListener('click', (event) => {
-        
+        event.preventDefault();
+        event.stopPropagation();
         console.log("clicked")
         // Code to send selected text to server and handle speech playback
         const selection = document.getSelection();
-        // const text = selection.toString().trim();
+        const text = selection.toString().trim();
         if (text) {
           sendTextToTTSAPI(text);
         }
       });
       document.body.appendChild(iconElement);
       // selection.anchorNode.parentElement.appendChild(iconElement);
-
-//       const ttsIcon = document.querySelector('.tts-icon');
-//       console.log(ttsIcon.style)
-//       const a = chrome.runtime.getURL('assets/babe.jpeg')
-//       const b = `url('${a}')`
-//       console.log(b)
-// ttsIcon.style.backgroundImage = b;
     } else {
       // Remove icons if no text is selected
       // const existingIcons = document.querySelectorAll('.tts-icon');

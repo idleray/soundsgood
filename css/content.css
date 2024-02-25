@@ -4,10 +4,11 @@
     /* right: 0; */
     margin-right: 5px;
     cursor: pointer;
-    width: 80px; /* Adjust width and height as needed */
-    height: 80px;
-    /* background-image: url('chrome-extension://__MSG_@@extension_id__/assets/ic_sound.png'); */
+    width: 24px; /* Adjust width and height as needed */
+    height: 24px;
+    padding: 4px;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/assets/ic_sound_16.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #ff000050;
+    /* background-color: #ff000050; */
 }

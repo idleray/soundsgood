@@ -17,6 +17,15 @@
         "js": ["js/content.js"],
         "css": ["css/content.css"]
     }],
+    "web_accessible_resources": [{
+      "resources": ["assets/ic_sound_16.png"],
+      "matches":["*://*/*"]
+    }],
+    "icons": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    },
     "commands": {
       "play_audio": {
         "suggested_key": {
