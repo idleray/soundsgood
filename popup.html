@@ -21,27 +21,26 @@
     }
   </style>
   <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="./css/output.css">
 </head>
-<body>
-  <div class="custom-component">
-    <label class="text">First Line of Text</label>
-    <label class="select">
-      <select>
-        <!-- Add your select options here -->
-        <option>Option 1</option>
-        <option>Option 2</option>
-        <option>Option 3</option>
+<body class="p-2">
+  <div class=" ">
+    <label class="text-sm font-medium">语音服务</label>
+      <select class="flex border w-full h-8">
+        <option>Azure</option>
       </select>
-    </label>
   </div>
-  <div>
-    <label>region</label>
-    <select class="select">
-      <!-- Add your select options here -->
-      <option>Option 1</option>
-      <option>Option 2</option>
-      <option>Option 3</option>
-    </select>
+  <div class="">
+    <label class="text-sm font-medium">密钥</label>
+    <input id="key" class="flex border w-full h-8">
+      
+    </input>
+  </div>
+  <div class="">
+    <label class="text-sm font-medium">区域</label>
+    <input id="region" class="flex border w-full h-8">
+      
+    </input>
   </div>
 
   <script src="popup.js"></script>

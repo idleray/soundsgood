@@ -153,7 +153,7 @@ async function sendTextToTTSAPI(text) {
 
 async function readSubscriptionKey() {
   subscriptionKey = await readLocalStorage('subscriptionKey');
-  console.log(subscriptionKey)
+  // console.log(subscriptionKey)
 }
 
 async function readLocalStorage(key) {
